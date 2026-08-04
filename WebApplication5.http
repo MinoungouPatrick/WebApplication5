@@ -1,0 +1,49 @@
+@WebApplication5_HostAddress = http://localhost:5003
+
+### Récupérer toutes les taches
+GET {{WebApplication5_HostAddress}}/api/Todo
+Accept: application/json
+
+### Afficher une tache
+@id = 5
+GET {{WebApplication5_HostAddress}}/api/Todo/{{id}}
+Accept: application/json
+
+### Afficher les taches terminer
+GET {{WebApplication5_HostAddress}}/api/Todo/terminees
+Accept: application/json
+
+### Afficher les taches non terminer
+GET {{WebApplication5_HostAddress}}/api/Todo/non-terminees
+Accept: application/json
+
+### Ajouter une tache
+POST {{WebApplication5_HostAddress}}/api/todo
+Content-Type: application/json
+
+{
+"nom":"Concours",
+"estTerminee": true
+}
+### Modifier une tache
+@id1 = 
+PUT {{WebApplication5_HostAddress}}/api/Todo/{{id1}}
+Content-Type: application/json
+
+{
+"nom":"Construire",
+"estTerminee": false
+}
+
+### Supprimer une tache
+@id2 =
+DELETE {{WebApplication5_HostAddress}}/api/Todo/{{id2}}
+Accept: application/json
+
+###
+@id3 =
+PATCH {{WebApplication5_HostAddress}}/api/Todo/{{id3}}/etat
+Accept-Patch:
+
+
+
